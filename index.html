@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SN-95 Mustang Brake Bias Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet">
+</head>
+<body data-bs-theme="dark">
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">SN-95 Mustang Brake Bias Calculator</span>
+        </div>
+    </nav>
+    <div class="alert alert-info" role="alert">
+        Are your brakes not here? Contact <a href="https://www.svtperformance.com/members/03hp.179157/" class="link-secondary" target="_blank">03HP</a> or create an <a href="https://github.com/LawPaul/SN95-Brake-Bias/issues/new/choose" class="link-secondary" target="_blank">issue</a> to have them added! Information need: caliper piston diameters, radial pad height, rotor diameter
+    </div>
+    <div class="container" id="brake-bias">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Front brakes</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">select a row to calculate bias with different rear brakes</h6>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped table-hover">
+                            <thead>
+                            <tr>
+                                <th scope="col">Caliper</th>
+                                <th scope="col">Pistons (mm)</th>
+                                <th scope="col">Pad height (mm)</th>
+                                <th scope="col">Data source</th>
+                                <th scope="col">Rotor</th>
+                                <th scope="col">Diameter (mm)</th>
+                            </tr>
+                            </thead>
+                            <tbody id="front-brakes">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="card-title">Rear brakes</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary">desired bias affects highlights</h6>
+                    </div>
+                    <div class="card-body">
+                        <label for="desired-bias" class="form-label">Desired front bias</label>
+                        <input class="form-control" id="desired-bias" type="number" value="70" style="width: 80px">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">Front bias (%)</th>
+                                <th scope="col">Caliper</th>
+                                <th scope="col">Pistons (mm)</th>
+                                <th scope="col">Pad height (mm)</th>
+                                <th scope="col">Data source</th>
+                                <th scope="col">Rotor</th>
+                                <th scope="col">Diameter (mm)</th>
+                            </tr>
+                            </thead>
+                            <tbody id="rear-brakes">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

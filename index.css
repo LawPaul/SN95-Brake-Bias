@@ -1,0 +1,7 @@
+#front-brakes>.table-active>td {
+    background-color: #4e85ae;
+}
+
+#rear-brakes>.table-active>td {
+    background-color: #537f6b;
+}
