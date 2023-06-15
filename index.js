@@ -63,7 +63,7 @@ const frontCalipers = {
         padHeight: 60.0,
         source: "spec",
     },
-    "13-18 ATS" : {
+    "13-19 ATS" : {
         pistons: [
             42.0,
             42.0
@@ -72,6 +72,15 @@ const frontCalipers = {
         source: "image",
         // total height: 45.3
         // https://www.bremboparts.com/america/en/catalogue-us/pad/P09023N
+    },
+    "13-19 XTS" : {
+        pistons: [
+            42.0,
+            42.0
+        ],
+        padHeight: 38.0,
+        source: "forum",
+        // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
     },
 };
 const frontRotors = {
@@ -129,35 +138,39 @@ const rearRotors = {
 const frontBrakes = [
     {
         caliper: "94-98 V6 & GT",
-        rotor: "94-04 V6 & GT"
+        rotor: "94-04 V6 & GT",
     },
     {
         caliper: "99-04 V6 & GT",
-        rotor: "94-04 V6 & GT"
+        rotor: "94-04 V6 & GT",
     },
     {
         caliper: "00 Cobra R",
-        rotor: "93-04 Cobra & Cobra R"
+        rotor: "93-04 Cobra & Cobra R",
     },
     {
         caliper: "93, 95 Cobra R, 94-01 Cobra",
-        rotor: "93-04 Cobra & Cobra R"
+        rotor: "93-04 Cobra & Cobra R",
     },
     {
         caliper: "03-04 Cobra",
-        rotor: "93-04 Cobra & Cobra R"
+        rotor: "93-04 Cobra & Cobra R",
     },
     {
         caliper: "Brembo F50",
-        rotor: "07-12 GT500"
+        rotor: "07-12 GT500",
     },
     {
         caliper: "Brembo F50",
-        rotor: "FTBR 14.5\""
+        rotor: "FTBR 14.5\"",
     },
     {
-        caliper: "13-18 ATS",
-        rotor: "93-04 Cobra & Cobra R"
+        caliper: "13-19 ATS",
+        rotor: "93-04 Cobra & Cobra R",
+    },
+    {
+        caliper: "13-19 XTS",
+        rotor: "07-12 GT500",
     },
 ];
 const rearBrakes = [
