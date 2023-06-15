@@ -82,6 +82,17 @@ const frontCalipers = {
         source: "forum",
         // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
     },
+    "Baer 6P" : {
+        pistons: [
+            41.0,
+            35.0,
+            31.0,
+        ],
+        padHeight: 46.0,
+        source: "forum",
+        // total height: 63
+        // https://www.bremboparts.com/america/en/catalogue-us/pad/p10052n
+    },
 };
 const frontRotors = {
     "94-04 V6 & GT": {
@@ -96,8 +107,20 @@ const frontRotors = {
         diameter: 355.0,
         source: "spec",
     },
+    "FTBR 14\"": {
+        diameter: 355.0,
+        source: "spec",
+    },
     "FTBR 14.5\"": {
         diameter: 368.0,
+        source: "spec",
+    },
+    "Baer 13\"": {
+        diameter: 330.0,
+        source: "spec",
+    },
+    "Baer 14\"": {
+        diameter: 355.0,
         source: "spec",
     },
 };
@@ -162,6 +185,10 @@ const frontBrakes = [
     },
     {
         caliper: "Brembo F50",
+        rotor: "FTBR 14\"",
+    },
+    {
+        caliper: "Brembo F50",
         rotor: "FTBR 14.5\"",
     },
     {
@@ -171,6 +198,14 @@ const frontBrakes = [
     {
         caliper: "13-19 XTS",
         rotor: "07-12 GT500",
+    },
+    {
+        caliper: "Baer 6P",
+        rotor: "Baer 13\"",
+    },
+    {
+        caliper: "Baer 6P",
+        rotor: "Baer 14\"",
     },
 ];
 const rearBrakes = [
