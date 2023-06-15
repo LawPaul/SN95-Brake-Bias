@@ -323,21 +323,31 @@ function createRearBrakesUI() {
     });
     {
         const desiredBias = Number(document.getElementById("desired-bias").value) / 100.0;
-        let greaterThan = false;
+        let closestFound = false;
+        let closestDiff = 100.0;
         brakeBiases.forEach(function (brakeBias, index) {
-            if (!greaterThan) {
-                if (brakeBias.bias > desiredBias) {
-                    greaterThan = true;
+            if (!closestFound) {
+                let curDiff = Math.abs(brakeBias.bias - desiredBias);
+                if (curDiff > closestDiff) { // prev was closest
+                    closestFound = true;
                     if (index > 0) {
                         brakeBiases[index - 1].highlight = true;
-                    } else if (index === 0 && brakeBiases.length > 1) {
-                        brakeBiases[index + 1].highlight = true;
                     }
-                    brakeBias.highlight = true;
+                    let preDiff = 100.0;
+                    if (index > 1) {
+                        preDiff = Math.abs(brakeBiases[index - 2].bias - desiredBias);
+                    }
+                    if (preDiff < curDiff) {
+                        brakeBiases[index - 2].highlight = true;
+                    } else {
+                        brakeBias.highlight = true;
+                    }
+                } else {
+                    closestDiff = curDiff;
                 }
             }
         });
-        if (!greaterThan) {
+        if (!closestFound) {
             if (brakeBiases.length > 0) {
                 brakeBiases[brakeBiases.length - 1].highlight = true;
             }
