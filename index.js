@@ -334,46 +334,66 @@ const frontBrakes = [
         rotor: "Wilwood 11.75\"",
     },
 ];
-const rearBrakes = [ // TODO: add SRA/IRS switch
+const rearBrakes = [
     {
         caliper: "94-04 Mustang",
-        rotor: "94-04 V6 & GT"
-    },
-    {
-        caliper: "94-04 Mustang",
-        rotor: "93-04 Cobra & Cobra R"
+        rotor: "94-04 V6 & GT",
+        sra: true,
+        irs: false,
     },
     {
         caliper: "94-04 Mustang",
-        rotor: "FTBR 13\""
+        rotor: "93-04 Cobra & Cobra R",
+        sra: true,
+        irs: true,
     },
-    /*{
-        caliper: "94-04 Mustang",
-        rotor: "Baer EradiSpeed1 13.25\""
-    },*/
     {
         caliper: "94-04 Mustang",
-        rotor: "13-14 GT500"
+        rotor: "FTBR 13\"",
+        sra: false,
+        irs: true,
+    },
+    {
+        caliper: "94-04 Mustang",
+        rotor: "Baer EradiSpeed1 13.25\"",
+        sra: true,
+        irs: false,
+    },
+    {
+        caliper: "94-04 Mustang",
+        rotor: "13-14 GT500",
+        sra: true,
+        irs: true,
     },
     {
         caliper: "96-99 Taurus",
-        rotor: "94-04 V6 & GT"
+        rotor: "94-04 V6 & GT",
+        sra: true,
+        irs: false,
     },
     {
         caliper: "96-99 Taurus",
-        rotor: "93-04 Cobra & Cobra R"
+        rotor: "93-04 Cobra & Cobra R",
+        sra: true,
+        irs: true,
     },
     {
         caliper: "96-99 Taurus",
-        rotor: "Baer EradiSpeed1 13.25\""
+        rotor: "Baer EradiSpeed1 13.25\"",
+        sra: true,
+        irs: false,
     },
     {
         caliper: "96-99 Taurus",
-        rotor: "FTBR 13\""
+        rotor: "FTBR 13\"",
+        sra: false,
+        irs: true,
     },
     {
         caliper: "96-99 Taurus",
-        rotor: "13-14 GT500"
+        rotor: "13-14 GT500",
+        sra: true,
+        irs: true,
     },
 ];
 
@@ -469,6 +489,7 @@ function createRearBrakesUI() {
     while (tbody_rearBrakes.firstChild) {
         tbody_rearBrakes.removeChild(tbody_rearBrakes.firstChild);
     }
+    const rearType = document.querySelector('input[name="rear-type"]:checked').value;
 
     let frontBrake = frontBrakes[0];
     {
@@ -480,12 +501,15 @@ function createRearBrakesUI() {
     }
 
     let brakeBiases = [];
+    console.log(rearType);
     rearBrakes.forEach(function (rearBrake) {
-        brakeBiases.push({
-            bias: getFrontBrakeBias(frontBrake, rearBrake),
-            rearBrake: rearBrake,
-            highlight: false
-        });
+        if (rearBrake[rearType]) {
+            brakeBiases.push({
+                bias: getFrontBrakeBias(frontBrake, rearBrake),
+                rearBrake: rearBrake,
+                highlight: false
+            });
+        }
     });
     brakeBiases.sort(function (a, b) {
         return a.bias - b.bias;
@@ -548,11 +572,21 @@ function createRearBrakesUI() {
 }
 
 function createFrontBrakesUI() {
+    // desired bias change
     const input_desiredBias = document.getElementById("desired-bias");
     input_desiredBias.oninput = function () {
         createRearBrakesUI();
     }
-    
+    // rear type change
+    const input_sra = document.getElementById("sra");
+    input_sra.oninput = function () {
+        createRearBrakesUI();
+    }
+    const input_irs = document.getElementById("irs");
+    input_irs.oninput = function () {
+        createRearBrakesUI();
+    }
+
     const tbody_frontBrakes = document.getElementById("front-brakes");
 
     frontBrakes.forEach(function (frontBrake, index) {
