@@ -93,6 +93,52 @@ const frontCalipers = {
         // total height: 63
         // https://www.bremboparts.com/america/en/catalogue-us/pad/p10052n
     },
+    "Wilwood AERO6" : {
+        pistons: [
+            41.148,
+            28.448,
+            28.448,
+        ],
+        padHeight: 48.0,
+        source: "image",
+        // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-16403-DR&year=2003&make=Ford&model=Mustang&option=Cobra
+        // total height: 72.9
+        // https://www.wilwood.com/BrakePads/BrakePadsList?padtype=6617
+    },
+    "Wilwood Superlite 6R" : {
+        pistons: [
+            41.148,
+            28.448,
+            28.448,
+        ],
+        padHeight: 42.0,
+        source: "image",
+        // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-9117-DR&year=2003&make=Ford&model=Mustang&option=Cobra
+        // total height: 61.7
+        // https://www.wilwood.com/BrakePads/BrakePadsList?padtype=7416
+    },
+    "Wilwood Superlite 4R" : {
+        pistons: [
+            47.752,
+            41.148
+        ],
+        padHeight: 42.0,
+        source: "image",
+        // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-14113&year=2003&make=Ford&model=Mustang&option=Cobra
+        // total height: 61.7
+        // https://www.wilwood.com/BrakePads/BrakePadsList?padtype=7420
+    },
+    "Wilwood Dynapro" : {
+        pistons: [
+            44.45,
+            44.45
+        ],
+        padHeight: 42.0,
+        source: "image",
+        // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-10015-D&year=2003&make=Ford&model=Mustang&option=Cobra
+        // total height: 56.0
+        // https://www.wilwood.com/BrakePads/BrakePadsList?padtype=7812
+    },
 };
 const frontRotors = {
     "94-04 V6 & GT": {
@@ -121,6 +167,22 @@ const frontRotors = {
     },
     "Baer 14\"": {
         diameter: 355.0,
+        source: "spec",
+    },
+    "Wilwood 14\"": {
+        diameter: 355.0,
+        source: "spec",
+    },
+    "Wilwood 12.88\"": {
+        diameter: 327.0,
+        source: "spec",
+    },
+    "Wilwood 12.19\"": {
+        diameter: 310.0,
+        source: "spec",
+    },
+    "Wilwood 11.75\"": {
+        diameter: 298.0,
         source: "spec",
     },
 };
@@ -206,6 +268,30 @@ const frontBrakes = [
     {
         caliper: "Baer 6P",
         rotor: "Baer 14\"",
+    },
+    {
+        caliper: "Wilwood AERO6",
+        rotor: "Wilwood 14\"",
+    },
+    {
+        caliper: "Wilwood Superlite 6R",
+        rotor: "Wilwood 14\"",
+    },
+    {
+        caliper: "Wilwood Superlite 6R",
+        rotor: "Wilwood 12.88\"",
+    },
+    {
+        caliper: "Wilwood Superlite 4R",
+        rotor: "Wilwood 12.88\"",
+    },
+    {
+        caliper: "Wilwood Superlite 4R",
+        rotor: "Wilwood 12.19\"",
+    },
+    {
+        caliper: "Wilwood Dynapro",
+        rotor: "Wilwood 11.75\"",
     },
 ];
 const rearBrakes = [
@@ -304,7 +390,7 @@ function createBrakeTds(brake) {
 
     const td_pistons = document.createElement("td");
     for (let piston of brake.caliper.pistons) {
-        td_pistons.textContent += piston + ", ";
+        td_pistons.textContent += (Number.isInteger(piston) ? piston : (Math.round(piston * 10.0) / 10.0).toFixed(1)) + ", ";
     }
     td_pistons.textContent = td_pistons.textContent.substr(0, td_pistons.textContent.length > 0 ? td_pistons.textContent.length - 2 : 0);
 
@@ -401,7 +487,7 @@ function createRearBrakesUI() {
         }
         {
             const td_bias = document.createElement("td");
-            td_bias.textContent = (brakeBias.bias * 100.0).toFixed(1);
+            td_bias.textContent = (Math.round((brakeBias.bias * 100.0) * 10.0) / 10.0).toFixed(1);
 
             tr.appendChild(td_bias);
             let tds = createBrakeTds(brakeBias.rearBrake);
