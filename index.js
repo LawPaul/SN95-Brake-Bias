@@ -55,6 +55,25 @@ const frontCalipers = {
         // total height: 52.0
         // total height https://www.rockauto.com/en/moreinfo.php?pk=11572953&cc=1410578&pt=1684
     },
+    "94-04 Saleen/Roush Alcon" : {
+        pistons: [
+            41.3,
+            38.1,
+        ],
+        padHeight: 49.0,
+        source: "spec",
+        // https://www.v6mustang.com/threads/14-roush-alcon-big-brake-set-up.264422/
+        // padHeight: https://alconkits.com/support/brake-pad-info/122-saleen-roush-alcon-brake-pads
+        // pistons:
+        // https://www.saleenclubofamerica.com/SCOATech/1994-2004.htm
+        // pns:
+        // S351 RIGHT caliper # : CAR7450H21ASRT
+        // S351 LEFT caliper # : CAR7450H21ASLT
+        // XP8 RIGHT caliper # : CAR7450H28ASRT
+        // XP8 LEFT caliper # : CAR7450H28ASLT
+        // https://alconkits.com/support/alcon-reference-guides
+        // H: 38.1/41.3
+},
     "Brembo F50" : {
         pistons: [
             44.0,
@@ -149,7 +168,16 @@ const frontRotors = {
         diameter: 330.0,
         source: "spec",
     },
+    "Saleen/Alcon 13\"": {
+        diameter: 330.0,
+        source: "spec",
+        // DIV2148X007GL DIV2148X007GR
+    },
     "07-12 GT500": {
+        diameter: 355.0,
+        source: "spec",
+    },
+    "Roush/Alcon EradiSpeed+ 14\"": {
         diameter: 355.0,
         source: "spec",
     },
@@ -215,6 +243,10 @@ const rearRotors = {
         diameter: 330.0,
         source: "spec",
     },
+    "Baer EradiSpeed1 13.25\"": {
+        diameter: 336.55,
+        source: "spec",
+    },
     "13-14 GT500": {
         diameter: 350.0,
         source: "spec",
@@ -240,6 +272,14 @@ const frontBrakes = [
     {
         caliper: "03-04 Cobra",
         rotor: "93-04 Cobra & Cobra R",
+    },
+    {
+        caliper: "94-04 Saleen/Roush Alcon",
+        rotor: "Saleen/Alcon 13\"",
+    },
+    {
+        caliper: "94-04 Saleen/Roush Alcon",
+        rotor: "Roush/Alcon EradiSpeed+ 14\"",
     },
     {
         caliper: "Brembo F50",
@@ -294,7 +334,7 @@ const frontBrakes = [
         rotor: "Wilwood 11.75\"",
     },
 ];
-const rearBrakes = [
+const rearBrakes = [ // TODO: add SRA/IRS switch
     {
         caliper: "94-04 Mustang",
         rotor: "94-04 V6 & GT"
@@ -307,6 +347,10 @@ const rearBrakes = [
         caliper: "94-04 Mustang",
         rotor: "FTBR 13\""
     },
+    /*{
+        caliper: "94-04 Mustang",
+        rotor: "Baer EradiSpeed1 13.25\""
+    },*/
     {
         caliper: "94-04 Mustang",
         rotor: "13-14 GT500"
@@ -318,6 +362,10 @@ const rearBrakes = [
     {
         caliper: "96-99 Taurus",
         rotor: "93-04 Cobra & Cobra R"
+    },
+    {
+        caliper: "96-99 Taurus",
+        rotor: "Baer EradiSpeed1 13.25\""
     },
     {
         caliper: "96-99 Taurus",
