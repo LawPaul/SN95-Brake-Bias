@@ -177,7 +177,7 @@ const frontRotors = {
         diameter: 355.0,
         source: "spec",
     },
-    "Roush/Alcon EradiSpeed+ 14\"": {
+    "Roush/Alcon 14\"": {
         diameter: 355.0,
         source: "spec",
     },
@@ -279,7 +279,7 @@ const frontBrakes = [
     },
     {
         caliper: "94-04 Saleen/Roush Alcon",
-        rotor: "Roush/Alcon EradiSpeed+ 14\"",
+        rotor: "Roush/Alcon 14\"",
     },
     {
         caliper: "Brembo F50",
