@@ -120,7 +120,7 @@ const frontCalipers = {
             42.0
         ],
         padHeight: 38.0,
-        source: "forum",
+        source: "image",
         // piston seals o-ring inside diameter is 42mm: https://www.rockauto.com/en/moreinfo.php?pk=4728213&cc=1505662&pt=14387&jsn=10711
         // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
     },
