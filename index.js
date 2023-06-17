@@ -73,7 +73,29 @@ const frontCalipers = {
         // XP8 LEFT caliper # : CAR7450H28ASLT
         // https://alconkits.com/support/alcon-reference-guides
         // H: 38.1/41.3
-},
+    },
+    "05-09 Mustang GT" : {
+        pistons: [
+            43.0,
+            43.0
+        ],
+        padHeight: 48.0,
+        source: "image",
+        // caliper rebuild kit with bore: https://www.rockauto.com/en/moreinfo.php?pk=8920076&cc=1431310&pt=1720&jsn=10606
+        // caliper with bore: https://www.rockauto.com/en/moreinfo.php?pk=1153038&cc=1431310&pt=1704&jsn=10876&jsn=10876
+        // total height: 54.0
+        // https://www.hawkperformance.com/pads/hb484b-670
+    },
+    "07-12 GT500" : {
+        pistons: [
+            44.0,
+            40.0
+        ],
+        padHeight: 60.0,
+        source: "spec",
+        // caliper: https://www.rockauto.com/en/moreinfo.php?pk=8920084&cc=1433450&pt=1720&jsn=11024&jsn=11024
+        // pad: same as F50
+    },
     "Brembo F50" : {
         pistons: [
             44.0,
@@ -99,6 +121,7 @@ const frontCalipers = {
         ],
         padHeight: 38.0,
         source: "forum",
+        // piston seals o-ring inside diameter is 42mm: https://www.rockauto.com/en/moreinfo.php?pk=4728213&cc=1505662&pt=14387&jsn=10711
         // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
     },
     "Baer 6P" : {
@@ -280,6 +303,14 @@ const frontBrakes = [
     {
         caliper: "94-04 Saleen/Roush Alcon",
         rotor: "Roush/Alcon 14\"",
+    },
+    {
+        caliper: "05-09 Mustang GT",
+        rotor: "07-12 GT500",
+    },
+    {
+        caliper: "07-12 GT500",
+        rotor: "07-12 GT500",
     },
     {
         caliper: "Brembo F50",
@@ -465,8 +496,8 @@ function createBrakeTds(brake) {
     const td_padHeight = document.createElement("td");
     td_padHeight.textContent = brake.caliper.padHeight;
 
-    const td_dataSource = document.createElement("td");
-    td_dataSource.textContent = brake.caliper.source;
+    //const td_dataSource = document.createElement("td");
+    //td_dataSource.textContent = brake.caliper.source;
 
     const td_rotor = document.createElement("td");
     td_rotor.textContent = brake.rotor.name;
@@ -478,7 +509,7 @@ function createBrakeTds(brake) {
         td_caliper,
         td_pistons,
         td_padHeight,
-        td_dataSource,
+        //td_dataSource,
         td_rotor,
         td_diameter
     ]
