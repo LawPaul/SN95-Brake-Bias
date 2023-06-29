@@ -79,12 +79,13 @@ const frontCalipers = {
             43.0,
             43.0
         ],
-        padHeight: 48.0,
-        source: "image",
+        padHeight: 46.0,
+        source: "spec",
         // caliper rebuild kit with bore: https://www.rockauto.com/en/moreinfo.php?pk=8920076&cc=1431310&pt=1720&jsn=10606
         // caliper with bore: https://www.rockauto.com/en/moreinfo.php?pk=1153038&cc=1431310&pt=1704&jsn=10876&jsn=10876
         // total height: 54.0
         // https://www.hawkperformance.com/pads/hb484b-670
+        // spec: https://www.ferodoracing.com/ecat/code-compound/car-racing/brake-pads/FRP3129H
     },
     "07-12 GT500" : {
         pistons: [
@@ -101,8 +102,10 @@ const frontCalipers = {
             44.0,
             40.0
         ],
-        padHeight: 60.0,
+        padHeight: 51.7,
         source: "spec",
+        // match caliper to pad: https://www.zeckhausen.com/catalog/index.php?cPath=82_85
+        // FERODO brake pads: https://www.ferodoracing.com/ecat/code/car-racing/brake-pads/FCP1281
     },
     "13-19 ATS" : {
         pistons: [
@@ -310,10 +313,6 @@ const frontBrakes = [
     },
     {
         caliper: "07-12 GT500",
-        rotor: "07-12 GT500",
-    },
-    {
-        caliper: "Brembo F50",
         rotor: "07-12 GT500",
     },
     {
