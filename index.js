@@ -10,6 +10,7 @@ const frontCalipers = {
         pistons: [
             66.0
         ],
+        fmsi: "D600",
         padHeight: 52.0,
         source: "image",
         // total height: 70.6
@@ -20,6 +21,7 @@ const frontCalipers = {
             44.5,
             44.5
         ],
+        fmsi: "D804",
         padHeight: 52.0,
         source: "image",
         // total height: 60.4
@@ -30,6 +32,8 @@ const frontCalipers = {
             40.0,
             36.0
         ],
+        fmsi: "D1053",
+        hawk: "HB194",
         padHeight: 52.0,
         source: "image",
         // total height: 69.3
@@ -40,6 +44,7 @@ const frontCalipers = {
             38.0,
             38.0
         ],
+        fmsi: "D412",
         padHeight: 40.0,
         source: "image",
         // total height: 51.6
@@ -50,16 +55,18 @@ const frontCalipers = {
             40.0,
             40.0
         ],
+        fmsi: "D412",
         padHeight: 40.0,
         source: "image",
         // total height: 52.0
         // total height https://www.rockauto.com/en/moreinfo.php?pk=11572953&cc=1410578&pt=1684
     },
-    "94-04 Saleen/Roush Alcon" : {
+    "94-04 Roush Alcon" : {
         pistons: [
             41.3,
             38.1,
         ],
+        hawk: "HB105",
         padHeight: 49.0,
         source: "spec",
         // https://www.v6mustang.com/threads/14-roush-alcon-big-brake-set-up.264422/
@@ -74,11 +81,67 @@ const frontCalipers = {
         // https://alconkits.com/support/alcon-reference-guides
         // H: 38.1/41.3
     },
+    "94-02 Saleen Alcon" : {
+        pistons: [
+            41.3,
+            38.1,
+        ],
+        hawk: "HB105",
+        padHeight: 49.0,
+        source: "spec",
+        // https://www.v6mustang.com/threads/14-roush-alcon-big-brake-set-up.264422/
+        // padHeight: https://alconkits.com/support/brake-pad-info/122-saleen-roush-alcon-brake-pads
+        // pistons:
+        // https://www.saleenclubofamerica.com/SCOATech/1994-2004.htm
+        // pns:
+        // S351 RIGHT caliper # : CAR7450H21ASRT
+        // S351 LEFT caliper # : CAR7450H21ASLT
+        // XP8 RIGHT caliper # : CAR7450H28ASRT
+        // XP8 LEFT caliper # : CAR7450H28ASLT
+        // https://alconkits.com/support/alcon-reference-guides
+        // H: 38.1/41.3
+    },
+    "00-01 Saleen AP Racing" : { // TODO: not added, do not know piston sizes
+        pistons: [
+            40.0,
+            40.0,
+        ],
+        hawk: "HB110", // also HB102, HB109
+        padHeight: 50.3,
+        source: "spec",
+        // https://www.saleenclubofamerica.com/SCOATech/1994-2004.htm
+        // https://www.ferodoracing.com/ecat/code-compound/car-racing/brake-pads/FRP216H
+        // unknown piston sizes
+        // went with 13" rotor
+    },
+    "01-04 Saleen Brembo" : {
+        pistons: [
+            40.0,
+            36.0
+        ],
+        fmsi: "D1053",
+        hawk: "HB194",
+        padHeight: 52.0,
+        source: "image",
+        // same as 00 Cobra R (unsure of piston size)
+    },
+    "01-04 Saleen Extreme Brembo" : {
+        pistons: [
+            44.0,
+            40.0
+        ],
+        fmsi: "D810",
+        hawk: "HB193",
+        padHeight: 51.7,
+        source: "spec",
+        // same as F40/F50 (unsure of piston size)
+    },
     "05-09 Mustang GT" : {
         pistons: [
             43.0,
             43.0
         ],
+        fmsi: "D1081",
         padHeight: 46.0,
         source: "spec",
         // caliper rebuild kit with bore: https://www.rockauto.com/en/moreinfo.php?pk=8920076&cc=1431310&pt=1720&jsn=10606
@@ -92,40 +155,86 @@ const frontCalipers = {
             44.0,
             40.0
         ],
+        fmsi: "D1001",
         padHeight: 60.0,
         source: "spec",
         // caliper: https://www.rockauto.com/en/moreinfo.php?pk=8920084&cc=1433450&pt=1720&jsn=11024&jsn=11024
-        // pad: same as F50
     },
     "Brembo F50" : {
         pistons: [
             44.0,
             40.0
         ],
+        fmsi: "D810",
+        hawk: "HB193",
         padHeight: 51.7,
         source: "spec",
         // match caliper to pad: https://www.zeckhausen.com/catalog/index.php?cPath=82_85
         // FERODO brake pads: https://www.ferodoracing.com/ecat/code/car-racing/brake-pads/FCP1281
+    },
+    "Brembo F40" : {
+        pistons: [
+            44.0,
+            38.0
+        ],
+        fmsi: "D810",
+        hawk: "HB193",
+        padHeight: 51.7,
+        source: "spec",
+        // same as F50 except piston
+    },
+    "92-02 Viper" : {
+        pistons: [
+            44.0,
+            40.0
+        ],
+        fmsi: "D1053",
+        hawk: "HB194",
+        padHeight: 52.0,
+        source: "image",
+        // same as 00 Cobra R with larger pistons
     },
     "13-19 ATS" : {
         pistons: [
             42.0,
             42.0
         ],
-        padHeight: 38.0,
-        source: "image",
-        // total height: 45.3
-        // https://www.bremboparts.com/america/en/catalogue-us/pad/P09023N
+        fmsi: "D1001",
+        padHeight: 60.0,
+        source: "spec",
     },
     "13-19 XTS" : {
         pistons: [
             42.0,
             42.0
         ],
-        padHeight: 38.0,
+        fmsi: "D1001",
+        padHeight: 60.0,
         source: "image",
         // piston seals o-ring inside diameter is 42mm: https://www.rockauto.com/en/moreinfo.php?pk=4728213&cc=1505662&pt=14387&jsn=10711
         // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
+    },
+    "StopTech ST-40 13\"" : {
+        pistons: [
+            38.0,
+            34.0,
+        ],
+        fmsi: "D372",
+        hawk: "HB141",
+        padHeight: 48.0,
+        source: "image",
+        // pad: https://www.pegasusautoracing.com/images/L/HB141.JPG
+    },
+    "StopTech ST-40 14\"" : {
+        pistons: [
+            42.0,
+            38.0,
+        ],
+        fmsi: "D372",
+        hawk: "HB141",
+        padHeight: 48.0,
+        source: "image",
+        // pad: https://www.pegasusautoracing.com/images/L/HB141.JPG
     },
     "Baer 6P" : {
         pistons: [
@@ -133,6 +242,7 @@ const frontCalipers = {
             35.0,
             31.0,
         ],
+        fmsi: "D731",
         padHeight: 46.0,
         source: "forum",
         // total height: 63
@@ -144,6 +254,8 @@ const frontCalipers = {
             28.448,
             28.448,
         ],
+        hawk: "HB800",
+        wilwood: "6617",
         padHeight: 48.0,
         source: "image",
         // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-16403-DR&year=2003&make=Ford&model=Mustang&option=Cobra
@@ -156,6 +268,8 @@ const frontCalipers = {
             28.448,
             28.448,
         ],
+        hawk: "HB521",
+        wilwood: "7416",
         padHeight: 42.0,
         source: "image",
         // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-9117-DR&year=2003&make=Ford&model=Mustang&option=Cobra
@@ -167,6 +281,8 @@ const frontCalipers = {
             47.752,
             41.148
         ],
+        hawk: "HB521",
+        wilwood: "7420",
         padHeight: 42.0,
         source: "image",
         // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-14113&year=2003&make=Ford&model=Mustang&option=Cobra
@@ -178,6 +294,8 @@ const frontCalipers = {
             44.45,
             44.45
         ],
+        hawk: "HB542",
+        wilwood: "7812",
         padHeight: 42.0,
         source: "image",
         // https://www.wilwood.com/BrakeKits/BrakeKitsProdFront?itemno=140-10015-D&year=2003&make=Ford&model=Mustang&option=Cobra
@@ -194,7 +312,7 @@ const frontRotors = {
         diameter: 330.0,
         source: "spec",
     },
-    "Saleen/Alcon 13\"": {
+    "Saleen/Alcon": {
         diameter: 330.0,
         source: "spec",
         // DIV2148X007GL DIV2148X007GR
@@ -203,9 +321,29 @@ const frontRotors = {
         diameter: 355.0,
         source: "spec",
     },
-    "Roush/Alcon 14\"": {
+    "Roush/Alcon": {
         diameter: 355.0,
         source: "spec",
+    },
+    "Brembo GT 330": {
+        diameter: 330.0,
+        source: "spec"
+    },
+    "Brembo GT 332": {
+        diameter: 332.0,
+        source: "spec"
+    },
+    "Brembo GT": {
+        diameter: 355.0,
+        source: "spec"
+    },
+    "StopTech AeroRotor 13\"": {
+        diameter: 332.0,
+        source: "spec"
+    },
+    "StopTech AeroRotor 14\"": {
+        diameter: 355.0,
+        source: "spec"
     },
     "FTBR 14\"": {
         diameter: 355.0,
@@ -245,6 +383,7 @@ const rearCalipers = {
         pistons: [
             38.0
         ],
+        fmsi: "D627",
         padHeight: 37.0,
         source: "spec",
     },
@@ -252,6 +391,7 @@ const rearCalipers = {
         pistons: [
             43.0
         ],
+        fmsi: "D627",
         padHeight: 37.0,
         source: "spec",
     },
@@ -300,12 +440,20 @@ const frontBrakes = [
         rotor: "93-04 Cobra & Cobra R",
     },
     {
-        caliper: "94-04 Saleen/Roush Alcon",
-        rotor: "Saleen/Alcon 13\"",
+        caliper: "94-02 Saleen Alcon",
+        rotor: "Saleen/Alcon",
     },
     {
-        caliper: "94-04 Saleen/Roush Alcon",
-        rotor: "Roush/Alcon 14\"",
+        caliper: "94-04 Roush Alcon",
+        rotor: "Roush/Alcon",
+    },
+    {
+        caliper: "01-04 Saleen Brembo",
+        rotor: "93-04 Cobra & Cobra R",
+    },
+    {
+        caliper: "01-04 Saleen Extreme Brembo",
+        rotor: "Brembo GT",
     },
     {
         caliper: "05-09 Mustang GT",
@@ -317,11 +465,19 @@ const frontBrakes = [
     },
     {
         caliper: "Brembo F50",
+        rotor: "07-12 GT500",
+    },
+    {
+        caliper: "Brembo F50",
         rotor: "FTBR 14\"",
     },
     {
         caliper: "Brembo F50",
         rotor: "FTBR 14.5\"",
+    },
+    {
+        caliper: "92-02 Viper",
+        rotor: "93-04 Cobra & Cobra R",
     },
     {
         caliper: "13-19 ATS",
@@ -330,6 +486,14 @@ const frontBrakes = [
     {
         caliper: "13-19 XTS",
         rotor: "07-12 GT500",
+    },
+    {
+        caliper: "StopTech ST-40 13\"",
+        rotor: "StopTech AeroRotor 13\"",
+    },
+    {
+        caliper: "StopTech ST-40 14\"",
+        rotor: "StopTech AeroRotor 14\"",
     },
     {
         caliper: "Baer 6P",
@@ -380,7 +544,7 @@ const rearBrakes = [
     {
         caliper: "94-04 Mustang",
         rotor: "FTBR 13\"",
-        sra: false,
+        sra: true,
         irs: true,
     },
     {
@@ -416,7 +580,7 @@ const rearBrakes = [
     {
         caliper: "96-99 Taurus",
         rotor: "FTBR 13\"",
-        sra: false,
+        sra: true,
         irs: true,
     },
     {
