@@ -214,6 +214,18 @@ const frontCalipers = {
         // piston seals o-ring inside diameter is 42mm: https://www.rockauto.com/en/moreinfo.php?pk=4728213&cc=1505662&pt=14387&jsn=10711
         // same pad/piston as 13-19 ATS: https://stangnet.com/mustang-forums/threads/caddilac-xts-14-brembo-brakes-on-a-mustang.912555/
     },
+    "09-14 CTS-V" : {
+        pistons: [
+            38.0,
+            34.0,
+            30.0
+        ],
+        fmsi: "D1405",
+        padHeight: 64.7,
+        source: "spec",
+        // pistons: https://racingbrake.com/bc-61bs/
+        // pad: https://www.brembostoreusa.com/product/disc-brake-pad-set/P37018
+    },
     "StopTech ST-40 13\"" : {
         pistons: [
             38.0,
@@ -485,6 +497,10 @@ const frontBrakes = [
     },
     {
         caliper: "13-19 XTS",
+        rotor: "07-12 GT500",
+    },
+    {
+        caliper: "09-14 CTS-V",
         rotor: "07-12 GT500",
     },
     {
