@@ -9,24 +9,26 @@
 const frontCalipers = {
     "94-98 V6 & GT" : {
         pistons: [
-            66.0
+            65.8622
         ],
         fmsi: "D600",
         padHeight: 52.0,
         source: "image",
         // total height: 70.6
         // https://www.rockauto.com/en/moreinfo.php?pk=1627724&cc=1304480&pt=1684
+        // piston: https://www.rockauto.com/en/moreinfo.php?pk=21954&cc=1304480&pt=1704
     },
     "99-04 V6 & GT" : {
         pistons: [
-            44.5,
-            44.5
+            45.0088,
+            45.0088
         ],
         fmsi: "D804",
         padHeight: 52.0,
         source: "image",
         // total height: 60.4
         // https://www.bremboparts.com/asiapacific/en/catalogue/pad/P24082N
+        // piston 45.0088: https://www.rockauto.com/en/moreinfo.php?pk=418411&cc=1425024&pt=1704
     },
     "00 Cobra R" : {
         pistons: [
@@ -42,14 +44,15 @@ const frontCalipers = {
     },
     "93, 95 Cobra R, 94-01 Cobra" : {
         pistons: [
-            38.0,
-            38.0
+            38.1254,
+            38.1254
         ],
         fmsi: "D412",
         padHeight: 40.0,
         source: "image",
         // total height: 51.6
         // https://www.rockauto.com/en/moreinfo.php?pk=10475120&cc=1372643&pt=1684
+        // piston: https://www.rockauto.com/en/moreinfo.php?pk=22108&cc=1304479&pt=1704
     },
     "03-04 Cobra" : {
         pistons: [
@@ -140,8 +143,8 @@ const frontCalipers = {
     },
     "05-09 Mustang GT" : {
         pistons: [
-            43.0,
-            43.0
+            42.672,
+            42.672
         ],
         fmsi: "D1081",
         padHeight: 46.0,
@@ -151,6 +154,7 @@ const frontCalipers = {
         // total height: 54.0
         // https://www.hawkperformance.com/pads/hb484b-670
         // spec: https://www.ferodoracing.com/ecat/code-compound/car-racing/brake-pads/FRP3129H
+        // piston: https://www.rockauto.com/en/moreinfo.php?pk=928379&cc=1441221&pt=1704
     },
     "07-12 GT500" : {
         pistons: [
@@ -228,7 +232,7 @@ const frontCalipers = {
         // pistons: https://racingbrake.com/bc-61bs/
         // pad: https://www.brembostoreusa.com/product/disc-brake-pad-set/P37018
     },
-    "StopTech ST-40 13\"" : {
+    "StopTech ST-40 13\"" : { // TODO: unsure of piston sizes
         pistons: [
             38.0,
             34.0,
@@ -239,7 +243,7 @@ const frontCalipers = {
         source: "image",
         // pad: https://www.pegasusautoracing.com/images/L/HB141.JPG
     },
-    "StopTech ST-40 14\"" : {
+    "StopTech ST-40 14\"" : { // TODO: unsure of piston sizes
         pistons: [
             42.0,
             38.0,
@@ -511,14 +515,15 @@ const frontBrakes = [
         caliper: "09-14 CTS-V",
         rotor: "07-12 GT500",
     },
-    {
+    // TODO: removed because of unknown piston sizes
+    /*{
         caliper: "StopTech ST-40 13\"",
         rotor: "StopTech AeroRotor 13\"",
     },
     {
         caliper: "StopTech ST-40 14\"",
         rotor: "StopTech AeroRotor 14\"",
-    },
+    },*/
     {
         caliper: "Baer 6P",
         rotor: "Baer 13\"",
