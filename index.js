@@ -5,6 +5,7 @@
 //**********************************************************************************************************************
 
 // notes on image source: used image at link and used https://eleif.net/photomeasure with total height to measure pad radial height
+// reference biases calculated by Maximum Motorsports: https://www.maximummotorsports.com/Assets/tech_info/brakes/MMHydroboostBias_805.jpg
 const frontCalipers = {
     "94-98 V6 & GT" : {
         pistons: [
@@ -52,12 +53,13 @@ const frontCalipers = {
     },
     "03-04 Cobra" : {
         pistons: [
-            40.0,
-            40.0
+            40.39,
+            40.39
         ],
         fmsi: "D412",
         padHeight: 40.0,
         source: "image",
+        // piston is 40.39: https://www.rockauto.com/en/moreinfo.php?pk=7204092&cc=1425035&pt=1704
         // total height: 52.0
         // total height https://www.rockauto.com/en/moreinfo.php?pk=11572953&cc=1410578&pt=1684
     },
@@ -393,19 +395,25 @@ const frontRotors = {
 const rearCalipers = {
     "94-04 Mustang" : {
         pistons: [
-            38.0
+            38.1254
         ],
+        screwArea: 59.0, // Jack Hidley of Maximum Motorsports: https://www.corral.net/threads/installing-ats-brembos-on-the-2003-cobra.2492810/post-18600836
         fmsi: "D627",
         padHeight: 37.0,
         source: "spec",
+        // piston size:
+        // labeled 38, spec is 38.1254
     },
     "96-99 Taurus" : {
         pistons: [
-            43.0
+            42.7736
         ],
+        screwArea: 59.0,
         fmsi: "D627",
         padHeight: 37.0,
         source: "spec",
+        // piston size: https://www.rockauto.com/en/moreinfo.php?pk=859339&jsn=3
+        // labeled 43, spec is 42.7736: https://www.corral.net/threads/installing-ats-brembos-on-the-2003-cobra.2492810/post-18599732
     },
 };
 const rearRotors = {
@@ -629,6 +637,9 @@ function addCaliperFunctions(o) {
             for (let piston of this.pistons) {
                 area += Math.PI * (piston / 2.0) * (piston / 2.0);
             }
+            if ("screwArea" in this) {
+                area -= this.screwArea;
+            }
             return area;
         };
     }
@@ -688,7 +699,6 @@ function createBrakeTds(brake) {
         td_caliper,
         td_pistons,
         td_padHeight,
-        //td_dataSource,
         td_rotor,
         td_diameter
     ]
@@ -711,7 +721,6 @@ function createRearBrakesUI() {
     }
 
     let brakeBiases = [];
-    console.log(rearType);
     rearBrakes.forEach(function (rearBrake) {
         if (rearBrake[rearType]) {
             brakeBiases.push({
