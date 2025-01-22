@@ -243,7 +243,7 @@ const frontCalipers = {
         source: "image",
         // pad: https://www.pegasusautoracing.com/images/L/HB141.JPG
     },
-    "StopTech ST-40 14\"" : { // TODO: unsure of piston sizes
+    /*"StopTech ST-40 14\"" : { // TODO: unsure of piston sizes
         pistons: [
             42.0,
             38.0,
@@ -253,6 +253,16 @@ const frontCalipers = {
         padHeight: 48.0,
         source: "image",
         // pad: https://www.pegasusautoracing.com/images/L/HB141.JPG
+    },*/
+    "StopTech ST-40 14\"" : {
+        pistons: [
+            40.0,
+            34.0,
+        ],
+        fmsi: "D609", // interchangeable with D372
+        padHeight: 49.25,
+        source: "spec",
+        // pad: https://www.svtperformance.com/attachments/pdf_d372-jpg.1872482/
     },
     "Baer 6P" : {
         pistons: [
@@ -524,6 +534,10 @@ const frontBrakes = [
         caliper: "StopTech ST-40 14\"",
         rotor: "StopTech AeroRotor 14\"",
     },*/
+    {
+        caliper: "StopTech ST-40 14\"",
+        rotor: "StopTech AeroRotor 14\"",
+    },
     {
         caliper: "Baer 6P",
         rotor: "Baer 13\"",
